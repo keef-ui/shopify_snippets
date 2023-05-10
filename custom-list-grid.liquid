@@ -1,0 +1,77 @@
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+
+{{ section.settings.heading }} 
+
+
+{%- assign section_image = section.settings.section_image -%}
+{{ section_image | image_url: width: section_image.width | image_tag: class: 'add_your_class_here', loading: 'lazy' }}
+<h2>{{ section.settings.heading }}</h2>
+  <ul class="list-grid grid">
+{%- for block in section.blocks -%}
+  {%- case block.type -%}
+
+    {%- when 'list-item' -%}
+      {%- ########################################################################## 
+      # Label: item
+      # Returns: a string or an empty object(if nothing has been entered)
+      # Filters: https://shopify.dev/api/liquid/objects#string 
+      ########################################################################## -%}
+      
+  
+  <li>{{ block.settings.item }} </li>
+
+
+
+
+  {%- endcase -%}
+{%- endfor -%}
+</ul>
+{% schema %}
+  {
+  "name": "Custom list grid",
+  "class": "custom-list-grid",
+  "max_blocks": 8,
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Heading",
+      "placeholder": "Heading goes here"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "section image",
+      "info": "Optional  image"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "List of items",
+      "type": "list-item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "item",
+          "label": "Item",
+          "default": "Item goes here",
+          "placeholder": "Item goes here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom list grid"
+    }
+  ]
+}  
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
