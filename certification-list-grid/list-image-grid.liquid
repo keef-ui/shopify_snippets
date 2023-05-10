@@ -1,0 +1,70 @@
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+
+<ul class="list-grid grid">
+  <li>content 1extra</li>
+  <li>00</li>
+  <li>content 3extra</li>
+  <li>content 4extra</li>
+  <li>content 5</li>
+  <li>0000</li>
+  <li>content 7extra rreer</li>
+</ul>
+
+{% schema %}
+{
+  "name": "Certification List Grid",
+  "tag": "section",
+  "class": "cert-list-grid",
+  	"max_blocks": 8,
+  "settings": [
+       {
+          "type": "text",
+          "id": "heading",
+          "default": "Video banner",
+          "label": "Video Banner"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "small"
+            },
+            {
+              "value": "h1",
+              "label": "medium"
+            },
+            {
+              "value": "h0",
+              "label": "large"
+            }
+          ],
+          "default": "h1",
+          "label": "heading_size"
+        }
+  ],
+  "blocks": [
+     {
+       "name": "List Item",
+       "type": "text",
+       "settings": [
+         {
+           "type": "text",
+           "id": "item",
+           "label": "item"
+         }
+       ]
+     }
+   ],  
+   "enabled_on": {
+    "templates": ["*"],
+    "groups": ["footer"]
+  },
+   "presets": [
+    {
+      "name": "Custom grid list"
+    }
+  ]
+}
+{% endschema %}
