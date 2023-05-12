@@ -1,98 +1,147 @@
-{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
-
-{{ section.settings.heading }} 
 
 
-{%- assign section_image = section.settings.section_image -%}
-{{ section_image | image_url: width: section_image.width | image_tag: class: 'add_your_class_here', loading: 'lazy' }}
-<h2>{{ section.settings.heading }}</h2>
-  <ul class="list-grid grid">
-{%- for block in section.blocks -%}
-  {%- case block.type -%}
+<div class='wrapper'>
 
-    {%- when 'list-item' -%}
-      {%- ########################################################################## 
-      # Label: item
-      # Returns: a string or an empty object(if nothing has been entered)
-      # Filters: https://shopify.dev/api/liquid/objects#string 
-      ########################################################################## -%}
-      
+
+  {%- assign section_image = section.settings.section_image -%}
   
-  <li>{{ block.settings.item }} </li>
-
-
-
-
-  {%- endcase -%}
-{%- endfor -%}
-</ul>
-{% schema %}
-  {
-  "name": "Custom list grid",
-  "class": "custom-list-grid",
-  "max_blocks": 8,
-  "tag": "section",
-  "settings": [
+  {{ section_image | image_url: width: section_image.width | image_tag: class: 'add_your_class_here', loading: 'lazy' }}
+  <h2>{{ section.settings.heading }}</h2>
+    <ul class="cert-list grid">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+        
+            {%- when 'list-item' -%}
+              {%- ########################################################################## 
+              # Label: item
+              # Returns: a string or an empty object(if nothing has been entered)
+              # Filters: https://shopify.dev/api/liquid/objects#string 
+              ########################################################################## -%}
+              
+          
+          <li>{% render 'icon-tick' %}{{ block.settings.item }} </li>
+        
+        
+        
+        
+          {%- endcase -%}
+        {%- endfor -%}
+      </ul>
+      <div class='bottom'>
+        <p>Images goes herr----------------------------->>></p>
+      </div>
+  
+   </div>   
+  {% schema %}
     {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Heading",
-      "placeholder": "Heading goes here"
-    },
-    {
-      "type": "text",
-      "id": "tagline",
-      "label": "Tagline",
-      "default": "Tagline",
-      "placeholder": "Tagline goes here"
-    },
-    {
-      "type": "image_picker",
-      "id": "section_image",
-      "label": "section image",
-      "info": "Optional  image"
+    "name": "Custom list grid",
+    "class": "custom-list-grid",
+    "max_blocks": 16,
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Heading",
+        "placeholder": "Heading goes here"
+      },
+      {
+        "type": "text",
+        "id": "tagline",
+        "label": "Tagline",
+        "default": "Tagline",
+        "placeholder": "Tagline goes here"
+      },
+      {
+        "type": "image_picker",
+        "id": "section_image",
+        "label": "section image",
+        "info": "Optional  image"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "List of items",
+        "type": "list-item",
+        "limit": 9,
+        "settings": [
+          {
+            "type": "text",
+            "id": "item",
+            "label": "Item",
+            "default": "Item goes here",
+            "placeholder": "Item goes here"
+          }
+        ]
+      },
+          {
+        "name": "Footer images",
+        "type": "footer-images",
+        "limit": 9,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Footer image"
+  
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom list grid"
+      }
+    ]
+  }  
+  {% endschema %}
+  
+  
+  {%- style -%}
+  
+  .custom-list-grid .wrapper{
+    text-align:center;
+    --gold: #f9aa0a;
+  }
+  
+  path {fill:white;}
+  
+  .custom-list-grid .icon {
+      width:1.3rem;
+      height:1.3rem;
+      margin-bottom:0px;
+      border-radius:50%;
+      background:var(--gold);
     }
-  ],
-  "blocks": [
-    {
-      "name": "List of items",
-      "type": "list-item",
-      "limit": 9,
-      "settings": [
-        {
-          "type": "text",
-          "id": "item",
-          "label": "Item",
-          "default": "Item goes here",
-          "placeholder": "Item goes here"
-        }
-      ]
-    },
-        {
-      "name": "Footer images",
-      "type": "footer-images",
-      "limit": 9,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Footer image"
-
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Custom list grid"
-    }
-  ]
-}  
-{% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
+  .bottom path { height:1rem;width:1rem;}
+  
+  .cert-list { 
+    justify-content:center; 
+    max-width:500px;
+    margin:auto;
+  
+  }
+  
+  .cert-list svg {
+      margin-right:0.3rem;
+  }
+  
+  .cert-list li {
+      padding: 0.5rem 1.25rem;
+    
+    
+  }
+  
+  
+  
+  {%- endstyle -%}
+  
+  
+  {% stylesheet %}
+  
+  
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}
