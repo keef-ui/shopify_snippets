@@ -124,14 +124,15 @@
     --pd:4rem;
     --smpd:2rem;
     --bg-color:#353635;
-    --iwh:1.8rem;
+    --iwh:1.8rem; /*icon width height */
+    --colg:3rem;   /*grid column for bottom flex grid */
   }
   
   path {fill:var(--font-color);}
   
   .custom-list-grid .icon {
-      width:1.3rem;
-      height:1.3rem;
+      width:var(--iwh);
+      height:var(--iwh);
       margin-bottom:0px;
       border-radius:50%;
       background:var(--gold);
@@ -178,12 +179,10 @@
    {
     color:  var(--font-color);
   }
-  .wrapper .icon {
-    width: var(--iwh);
-    height: var(--iwh);
-  }
+ 
   .bottom {
     padding: var(--pd) 0 var(--smpd) 0;
+    column-gap: var(--colg);
   }
   
   {%- endstyle -%}
