@@ -27,8 +27,25 @@
           {%- endcase -%}
         {%- endfor -%}
       </ul>
-      <div class='bottom'>
-        <p>Images goes herr----------------------------->>></p>
+      <div class='bottom grid'>
+            {%- for block in section.blocks -%}
+          {%- case block.type -%}
+        
+            {%- when 'footer-images' -%}
+              {%- ########################################################################## 
+              # Label: item
+              # Returns: a string or an empty object(if nothing has been entered)
+              # Filters: https://shopify.dev/api/liquid/objects#string 
+              ########################################################################## -%}
+              
+          
+         {{ block.settings.image | image_url: width: section_image.width | image_tag: class: 'add_your_class_here', loading: 'lazy' }} 
+        
+        
+        
+        
+          {%- endcase -%}
+        {%- endfor -%}
       </div>
   
    </div>   
@@ -103,6 +120,11 @@
   .custom-list-grid .wrapper{
     text-align:center;
     --gold: #f9aa0a;
+    --font-color:#ffffff;
+    --pd:4rem;
+    --smpd:2rem;
+    --bg-color:#353635;
+    --iwh:1.8rem;
   }
   
   path {fill:white;}
@@ -132,8 +154,37 @@
     
     
   }
+  .bottom {
+    justify-content:center; 
+      max-width:750px;
+    margin:auto;
+    
+  }
+  
+  .bottom img{
+      width: 6rem;
+      height: 100%;
+      filter: grayscale(1);
+  }
   
   
+    .wrapper {
+    background: var(--bg-color);
+    color: var(--font-color);
+    padding-top: var(--pd);
+    padding-bottom: var(--smpd);
+  }
+  .wrapper h2, .wrapper h2
+   {
+    color:  var(--font-color);
+  }
+  .wrapper .icon {
+    width: var(--iwh);
+    height: var(--iwh);
+  }
+  .bottom {
+    padding: var(--pd) 0 var(--smpd) 0;
+  }
   
   {%- endstyle -%}
   
