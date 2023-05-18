@@ -1,0 +1,119 @@
+
+
+<div class='logo-bn-wrapper'>
+
+
+  <h2>{{ section.settings.heading }}</h2>
+
+      <div class='logo-section'>
+        <span>{{ section.settings.heading }} </span>
+            {%- for block in section.blocks -%}
+          {%- case block.type -%}
+        
+            {%- when 'logo-images' -%}
+              {%- ########################################################################## 
+              # Label: logo
+              # Returns: a string or an empty object(if nothing has been entered)
+              # Filters: https://shopify.dev/api/liquid/objects#string 
+              ########################################################################## -%}
+              
+          
+         {{ block.settings.logo | image_url: width: section_image.width | image_tag: class: 'add_your_class_here', loading: 'lazy' }} 
+        
+        
+        
+        
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+  
+   </div>   
+  {% schema %}
+    {
+    "name": "Custom logo banner",
+    "class": "custom-logo-banner",
+    "max_blocks": 16,
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Heading",
+        "placeholder": "Heading goes here"
+      },
+    {
+        "type": "text",
+        "id": "text",
+        "label": "text",
+        "default": "Heading",
+        "placeholder": "Text goes here"
+      }
+    ],
+    "blocks": [
+          {
+        "name": "logo-images",
+        "type": "logo-images",
+        "limit": 7,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo image"
+  
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom list grid"
+      }
+    ]
+  }  
+  {% endschema %}
+  
+  
+  {%- style -%}
+  
+  .custom-logo-banner{
+    text-align:center;
+    --gold: #f9aa0a;
+    --font-color:#ffffff;
+    --pd:4rem;
+    --smpd:2rem;
+    --bg-color:#353635;
+    --iwh:1.8rem; /*icon width height */
+    --colg:3rem;   /*grid column for bottom flex grid */
+
+    filter:grayscale(100%);
+  }
+  
+@media (min-width: 768px)
+ .custom-logo-banner .logo-bn-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: scroll;
+}
+
+.logo-section > * {
+    height:5rem;
+    vertical-align: middle;
+    padding-right:1rem;
+}
+
+.logo-section span {
+    display:inline-block;
+    padding-right: 0.8rem;
+}
+  
+  {%- endstyle -%}
+  
+  
+  {% stylesheet %}
+  
+  
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}
