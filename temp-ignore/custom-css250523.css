@@ -35,3 +35,39 @@ div#Banner-template--16096490684589__image_banner::before {
 .banner__content {
     max-width: 150rem;
 }
+
+
+
+/* Header inline css   */
+
+/* 
+.header__menu-item {
+    padding: 1.2rem;
+    text-decoration: none;
+    color: rgba(var(--color-foreground));
+}
+
+.header__icons .icon {
+    color: rgba(var(--color-base-accent-2));
+} */
+
+
+
+
+/* Banner inline css   */
+
+/* .banner__content {
+    --buttons-border-width: 1px;
+}
+
+.button--secondary {
+    --color-button: var(--color-base-accent-2) !important;
+    --color-button-text: var(--color-base-accent-2) !important;
+    color: rgb(var(--color-background)) !important;
+}
+
+.button--primary {
+    --color-button: var(--color-base-accent-2) !important;
+    --color-button-text: 255, 255, 255 !important;
+    --alpha-button-background: 0.4;
+} */
