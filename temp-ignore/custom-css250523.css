@@ -1,0 +1,37 @@
+.header-wrapper,
+.banner {
+    --trimining-ht: 0.8rem;
+}
+
+.header-wrapper::after {
+
+    height: var(--trimining-ht);
+    width: 100%;
+    position: absolute;
+    content: "";
+    background-image: linear-gradient(89deg, rgb(var(--color-base-accent-2)), transparent);
+    bottom: -1px;
+}
+
+div#Banner-template--16096490684589__image_banner::before {
+    width: 100%;
+    height: var(--trimining-ht);
+    background-image: linear-gradient(89deg, rgb(var(--color-base-accent-2)), transparent);
+    content: '';
+    /* top: 21px; */
+    z-index: 9;
+    position: absolute;
+    bottom: 0;
+}
+
+.banner__buttons {
+    flex-direction: column;
+}
+
+.banner__box {
+    text-align: left !important;
+}
+
+.banner__content {
+    max-width: 150rem;
+}
