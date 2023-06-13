@@ -1,0 +1,190 @@
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+
+<div class="video-banner banner banner--content-align-center banner--content-align-mobile-center banner--large">
+  <div class="video-wrapper banner__media media" style="">
+    <div class="banner__media media">
+      <video class="video-bg" autoplay muted loop playsinline poster={{ section.settings.poster | image_url }}>
+        <source src={{ section.settings.video_url }} type='video/mp4'>
+      </video>
+    </div>
+  </div>
+  <div class="banner__content banner__content--middle-center page-width">
+    <div class="banner__box content-container content-container--full-width-mobile color-accent-1 gradient">
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'heading' -%}
+      <h2 class="banner__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+        <span>{{ block.settings.heading | escape }}</span>
+      </h2>
+      {%- when 'text' -%}
+      <div class="banner__text {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+        <span>{{ block.settings.text | escape }}</span>
+      </div>
+      {%- when 'buttons' -%}
+      <div
+        class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
+        {{ block.shopify_attributes }}>
+        {%- if block.settings.button_label_1 != blank -%}
+        <a {% if block.settings.button_link_1==blank %} role="link" aria-disabled="true" {% else %}
+          href="{{ block.settings.button_link_1 }}" {% endif %}
+          class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}">
+          {{- block.settings.button_label_1 | escape -}}
+        </a>
+        {%- endif -%}
+        {%- if block.settings.button_label_2 != blank -%}
+        <a {% if block.settings.button_link_2==blank %} role="link" aria-disabled="true" {% else %}
+          href="{{ block.settings.button_link_2 }}" {% endif %}
+          class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}">
+          {{- block.settings.button_label_2 | escape -}}
+        </a>
+        {%- endif -%}
+      </div>
+      {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Video Background Banner",
+  "tag": "section",
+  "class": "video-hero",
+  "settings": [
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Enter the video url here"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster",
+      "label": "Add fallback background image in case video doesn't load"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Video banner",
+          "label": "Video Banner"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "small"
+            },
+            {
+              "value": "h1",
+              "label": "medium"
+            },
+            {
+              "value": "h0",
+              "label": "large"
+            }
+          ],
+          "default": "h1",
+          "label": "heading_size"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Give customers details about the banner image(s) or content on the template.",
+          "label": "text label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "Body"
+            },
+            {
+              "value": "subtitle",
+              "label": "Subtitle"
+            },
+            {
+              "value": "caption-with-letter-spacing",
+              "label": "Upperclass"
+            }
+          ],
+          "default": "body",
+          "label": "settings"
+        }
+      ]
+    },
+    {
+      "type": "buttons",
+      "name": "Buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label_1",
+          "default": "Button label",
+          "label": "label_1.label",
+          "info": "abel_1.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "link_1.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary_1",
+          "default": false,
+          "label": "secondary_1.label"
+        },
+        {
+          "type": "text",
+          "id": "button_label_2",
+          "default": "Button label",
+          "label": "t:sections.image-banner.blocks.buttons.settings.button_label_2.label",
+          "info": "button_label_2.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link_2",
+          "label": "button_link_2.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary_2",
+          "default": false,
+          "label": "button_style_secondary_2.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Background Banner"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .media>video {
+    object-fit: cover;
+    object-position: center center;
+    transition: opacity .4s cubic-bezier(.25, .46, .45, .94);
+  }
+</style>
