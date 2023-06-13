@@ -1,9 +1,11 @@
 {% assign vda = 'Allergen free (Vegan Dream)' %}
 {% assign mm = 'Magic Muscle - Standard' %}
 {% assign vd = 'Vegan Dream - Standard' %}
+{% assign allowedCollections = "Vegan Dream - Standard,Magic Muscle - Standard,Allergen free (Vegan Dream)" | split: "," %}
 
-<ul class="grid product-grid contains-card contains-card--product contains-card--standard grid--4-col-desktop grid--2-col-tablet-down" role="list">
+<ul class="grid product-grid contains-card contains-card--product contains-card--standard grid--3-col-desktop grid--2-col-tablet-down" role="list">
   {%- for card_collection in collections -%}
+{% if allowedCollections contains card_collection.title %}
     <li class="grid__item">
       <!--
         These control flow tags check to see if there is a featured image for a collection.
@@ -43,6 +45,7 @@
     assign card_style = settings.collection_card_style
   endif
 -%}
+
 
 <div class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}">
   <div
@@ -99,7 +102,7 @@
                 href="{{ card_collection.url }}"
               {% endif %}
               class="full-unstyled-link"
-            >
+            > 
               {%- if card_collection.title != blank -%}
                 {{- card_collection.title | escape -}}
               {%- else -%}
@@ -130,7 +133,7 @@
                 href="{{ card_collection.url }}"
               {% endif %}
               class="full-unstyled-link"
-            >
+            >   
               {%- if card_collection.title != blank -%}
                 {{- card_collection.title | escape -}}
               {%- else -%}
@@ -154,5 +157,7 @@
 </div>
 
     </li>
+   {% endif %}
   {%- endfor -%}
 </ul>
+
