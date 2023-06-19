@@ -1,5 +1,114 @@
+/**/
+/* Replace  the hedaer id for about page*/
+/**/
+/**/
+/**/
+
+
+:root {
+    --header-transparancyColor: #ffffff4a;
+    --product-grid-lr-margin: 4.6rem;
+}
+
 .header__icon--cart .icon-cart {
     height: 2.6rem;
     width: 4.4rem;
     padding: 0;
+}
+
+.scrolled-past-header .header-wrapper {
+    background-color: var(--header-transparancyColor);
+    animation-name: animate-header;
+    animation-duration: 0.4s;
+
+}
+
+@keyframes animate-header {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+.shopify-section-group-footer-group {
+    position: relative;
+    background: white;
+}
+
+.list-menu--inline li:hover {
+    background: #d6d6d6;
+
+
+}
+
+.header__menu-item:hover span {
+    text-decoration: none !important;
+}
+
+/* This targets about page header , replace with the hedaer id of the about page when reinstalling */
+#Banner-template--16116916158637__204aebdf-7542-4b77-bb53-025769a6894b::before {
+    width: 100%;
+    height: 3rem;
+    background: #a7cf38;
+    content: 'PREMIUM VEGAN SUPPLEMENTS';
+    /* top: 21px; */
+    z-index: 9;
+    position: absolute;
+    bottom: 0;
+
+    color: white !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* landing page product grid  */
+.grid.product-grid {
+    margin-left: var(--product-grid-lr-margin);
+    margin-right: var(--product-grid-lr-margin);
+}
+
+.collection__title.title-wrapper.title-wrapper--no-top-margin.page-width {
+    margin-left: var(--product-grid-lr-margin) !important;
+    margin-right: var(--product-grid-lr-margin) !important;
+}
+
+
+/* Typography */
+@media only screen and (min-width: 750px) {
+    .h0 {
+        font-size: calc(var(--font-heading-scale) * 2.2rem);
+    }
+}
+
+.h0 {
+    font-size: calc(var(--font-heading-scale) * 2.2rem);
+}
+
+
+/*Font sizing*/
+@media only screen and (min-width: 750px) {
+
+    h1,
+    .h1 {
+        font-size: calc(var(--font-heading-scale) * 2.2rem);
+        text-transform: uppercase;
+    }
+}
+
+/*Hide logo*/
+h1.header__heading,
+.header__heading-link {
+    position: fixed;
+    opacity: 0;
+    left: 9999px;
+}
+
+.isolate .rich-text__wrapper {
+    width: 100% !important;
+    max-width: calc(100% - 10rem);
 }
