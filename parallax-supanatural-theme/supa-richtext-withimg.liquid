@@ -12,6 +12,11 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  .richtext-image img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: bottom;
+  }
 {%- endstyle -%}
 
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
@@ -21,7 +26,7 @@
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'richtext-image' -%}
-              <div
+              <div class='richtext-image'
               >
                {{ block.settings.richtext-image| image_url: width: section_image.width | image_tag: class: 'image', loading: 'lazy' }} 
     

@@ -1,5 +1,16 @@
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 
+{% comment %}
+  Renders a video background
+  To make this fixed just add following custom css styling
+
+  .video-bg {
+  position: fixed;
+  top: 0px;
+}
+  
+{% endcomment %}
+
 <div class="video-banner banner banner--content-align-center banner--content-align-mobile-center banner--large">
   <div class="video-wrapper banner__media media" style="">
     <div class="banner__media media">
