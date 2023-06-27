@@ -2,6 +2,9 @@
 {% assign mm = 'Magic Muscle - Standard' %}
 {% assign vd = 'Vegan Dream - Standard' %}
 {% assign allowedCollections = "Vegan Dream - Standard,Magic Muscle - Standard,Allergen free (Vegan Dream)" | split: "," %}
+{% assign columns = 1 %}
+{% assign media_aspect_ratio = 'portrait' %}
+
 
 <ul class="grid product-grid contains-card contains-card--product contains-card--standard grid--3-col-desktop grid--2-col-tablet-down" role="list">
 {%- for block in section.blocks -%}
@@ -94,6 +97,8 @@
               loading="lazy"
               class="motion-reduce"
             >
+      
+        {{ collection.title }}
           </div>
         </div>
       {%- endif -%}
@@ -209,7 +214,7 @@
 
 {% schema %}
 {
-  "name": "Code In Shopify Section",
+  "name": "custom-collection-list",
   "settings": [
     {
       "type": "text",
