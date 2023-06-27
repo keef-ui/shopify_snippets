@@ -1,9 +1,20 @@
 /**/
-/* Replace  the hedaer id for about page*/
+/* Replace  the hedaer id for about page header*/
 /**/
 /**/
 /**/
 
+html {
+    /* Smooth scroll  - Not working */
+    /* overflow-y: scroll;
+    scroll-behavior: smooth; */
+}
+
+/* odd bug on mobile with scroll- */
+/* html:has(body.overflow-hidden-tablet) {
+ 
+       overflow: hidden; 
+} */
 
 :root {
     --header-transparancyColor: #ffffff4a;

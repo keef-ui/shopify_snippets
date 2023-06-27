@@ -89,6 +89,10 @@
       padding-top: 0.5rem;
     }
   }
+
+ .header__icon--arrow {
+    transform: rotate(90deg); 
+}
 </style>
 
 {%- style -%}
@@ -737,6 +741,17 @@
           </div>
         {%- endif -%}
       </a>
+
+    <a href="#shopify-section-template--16105127903405__facbb408-ae80-4bd5-8fbb-8099730cce79" class="header__icon header__icon--arrow link focus-inset" id="cart-icon-arrow">
+        {%- liquid 
+            render 'icon-arrow'
+          
+        -%}
+        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+      
+      </a>
+
+
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
