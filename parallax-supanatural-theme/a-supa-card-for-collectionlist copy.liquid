@@ -126,7 +126,7 @@
 
 {% schema %}
 {
-  "name": "t:sections.collection-list.name",
+  "name": "custom-collection-list",
   "tag": "section",
   "class": "section section-collection-list",
   "max_blocks": 15,
@@ -285,13 +285,17 @@
           "type": "collection",
           "id": "collection",
           "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
+        },{
+          "type": "text",
+          "id": "product-type",
+          "label": "vd=Vegan Dream - vda=Vegan Dream (Alergen free) - MM= Muscle Magic"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "t:sections.collection-list.presets.name",
+      "name": "custom-collection-list",
       "blocks": [
         {
           "type": "featured_collection"
