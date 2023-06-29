@@ -6,7 +6,7 @@
 
 html {
     /* Smooth scroll  - Not working */
-    /* overflow-y: scroll;
+    /*     overflow-y: scroll;
     scroll-behavior: smooth; */
 }
 
@@ -119,7 +119,19 @@ h1.header__heading,
     left: 9999px;
 }
 
+/* Text with image customsiations */ 
 .isolate .rich-text__wrapper {
     width: 100% !important;
     max-width: calc(100% - 10rem);
+}
+
+.image-with-text {
+    position: relative;
+    background-color: white;
+    max-width: none;
+}
+
+.image-with-text .media>img {
+    object-fit: contain;
+    top:-3.8rem;
 }
