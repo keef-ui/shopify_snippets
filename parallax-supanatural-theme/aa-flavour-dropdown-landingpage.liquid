@@ -1,0 +1,42 @@
+{% assign vda = 'Allergen free (Vegan Dream)' %}
+{% assign mm = 'Magic Muscle - Standard' %}
+{% assign vd = 'Vegan Dream - Standard' %}
+
+
+{% assign product_type = producttype %}
+
+{% if product_type == 'vda'  %}
+ {% assign tag = vda %}
+{% endif %}
+{% if product_type == "mm"  %}
+ {% assign tag = mm %}
+{% endif %}
+{% if product_type == "vd"  %}
+ {% assign tag = vd %}
+{% endif %}
+
+<div class="product-form__input product-form__input--dropdown">
+  <label class="form__label" for="product-list">FLAVOUR </label>
+  <div class="select">
+    <select id="product-list-{{ product_type }}" class='product-list' name="product-list">
+      <option value="" disabled selected>Select your flavour</option>
+      {% for product in collections.all.products %}
+        {% if product.tags contains tag %}
+            <option value="{{ product.url }}">{{ product.metafields.custom.flavour }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  </div>
+</div>
+
+<script>
+  // Add event listener to the select dropdown
+  document.getElementById("product-list-{{ product_type }}").addEventListener("change", function() {
+    // Get the selected URL from the dropdown
+    var selectedUrl = document.getElementById("product-list-{{ product_type }}").value;
+    // Redirect to the selected URL
+    if (selectedUrl) {
+      window.location.href = selectedUrl;
+    }
+  });
+</script>
