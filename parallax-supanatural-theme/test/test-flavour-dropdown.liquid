@@ -3,7 +3,7 @@
 {% assign vd = 'Vegan Dream - Standard' %}
 
 
-{% assign product_type = block.settings.product-type %}
+{% assign product_type = producttype %}
 
 {% if product_type == 'vda'  %}
  {% assign tag = vda %}
@@ -16,9 +16,10 @@
 {% endif %}
 
 <div class="product-form__input product-form__input--dropdown">
-  <label class="form__label" for="product-list">FLAVOUR</label>
+  <label class="form__label" for="product-list">FLAVOUR </label>
   <div class="select">
-    <select id="product-list-{{ product_type }}" name="product-list">
+    <select id="product-list-{{ product_type }}" class='product-list' name="product-list">
+      <option value="" disabled selected>Select your flavour</option>
       {% for product in collections.all.products %}
         {% if product.tags contains tag %}
             <option value="{{ product.url }}">{{ product.metafields.custom.flavour }}</option>

@@ -18,7 +18,9 @@ html {
 
 :root {
     --header-transparancyColor: #ffffff4a;
-    --product-grid-lr-margin: 4.6rem;
+    --product-grid-lr-margin: 2.6rem;
+    --graphic-placement-imgtxt-tp-sm: -28.5px;
+    --graphic-placement-imgtxt-tp-lg: -37px;
 }
 
 .header__icon--cart .icon-cart {
@@ -124,6 +126,8 @@ h1.header__heading,
     max-width: calc(100% - 10rem);
 }
 
+
+/*Image with text*/
 .image-with-text {
     position: relative;
     background-color: white;
@@ -132,15 +136,17 @@ h1.header__heading,
 
 .image-with-text .media>img {
     object-fit: contain;
-    top: -36px !important;
+    top: var(--graphic-placement-imgtxt-tp-sm) !important;
 }
 
-@media screen and (max-width: 749px) { 
+
+
+@media screen and (min-width: 750px) {
 
     .image-with-text .media>img {
-            object-fit: contain;
-            top: -37px !important;
-        }
+        object-fit: contain;
+        top: var(--graphic-placement-imgtxt-tp-lg) !important;
+    }
 
 }
 
@@ -148,7 +154,7 @@ h1.header__heading,
     overflow: visible !important;
 }
 
-.image-with-text .button{
-     color: black !important;
-     background-color: white !important;
+.image-with-text .button {
+    color: black !important;
+    background-color: white !important;
 }
