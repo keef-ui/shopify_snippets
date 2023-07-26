@@ -20,7 +20,7 @@ html {
     --header-transparancyColor: #ffffff4a;
     --product-grid-lr-margin: 2.6rem;
     --graphic-placement-imgtxt-tp-sm: -28.5px;
-    --graphic-placement-imgtxt-tp-lg: -37px;
+    --graphic-placement-imgtxt-tp-lg: -37.5px;
 }
 
 .header__icon--cart .icon-cart {
@@ -61,8 +61,24 @@ html {
     text-decoration: none !important;
 }
 
+/* Header and Navigation menu tweeaks   */
+
+@media screen and (min-width: 990px) {
+    .header--middle-left {
+
+        column-gap: 0rem;
+    }
+
+    .header:not(.drawer-menu).page-width {
+        padding-left: 4rem;
+
+    }
+
+}
+
+
 /* This targets about page header , replace with the hedaer id of the about page when reinstalling */
-#Banner-template--16116916158637__204aebdf-7542-4b77-bb53-025769a6894b::before {
+#Banner-template--20209608163639__204aebdf-7542-4b77-bb53-025769a6894b::before {
     width: 100%;
     height: 3rem;
     background: #a7cf38;
@@ -111,6 +127,12 @@ html {
         font-size: calc(var(--font-heading-scale) * 2.2rem);
         text-transform: uppercase;
     }
+
+    h3,
+    .h3 {
+        font-size: calc(var(--font-heading-scale) * 2rem);
+        font-weight: 600;
+    }
 }
 
 /*Hide logo*/
@@ -157,4 +179,13 @@ h1.header__heading,
 .image-with-text .button {
     color: black !important;
     background-color: white !important;
+}
+
+/* Product flvourdrop down list */
+#product-list,
+.product-list {
+    width: 100%;
+    height: 4rem;
+    color: black;
+    background-color: white;
 }
