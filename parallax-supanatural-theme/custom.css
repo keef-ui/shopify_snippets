@@ -1,5 +1,5 @@
 /**/
-/* Replace  the hedaer id for about page header*/
+/* Replace  the header id for about page header*/
 /**/
 /**/
 /**/
@@ -77,8 +77,11 @@ html {
 }
 
 
-/* This targets about page header , replace with the hedaer id of the about page when reinstalling */
-#Banner-template--20209608163639__204aebdf-7542-4b77-bb53-025769a6894b::before {
+
+/*This targets page headers  for About page, Muscle Magic page, Vegan Dream page*/
+#Banner-template--20209608163639__204aebdf-7542-4b77-bb53-025769a6894b::before,
+#Banner-template--20390203621687__204aebdf-7542-4b77-bb53-025769a6894b::before,
+#Banner-template--20390109217079__204aebdf-7542-4b77-bb53-025769a6894b::before {
     width: 100%;
     height: 3rem;
     background: #a7cf38;
@@ -94,6 +97,17 @@ html {
     align-items: center;
 
 }
+
+#Banner-template--20390203621687__204aebdf-7542-4b77-bb53-025769a6894b::before {
+
+    content: 'PREMIUM VEGAN SUPPLEMENTS - Muscle Magic';
+}
+
+#Banner-template--20390109217079__204aebdf-7542-4b77-bb53-025769a6894b::before {
+    content: 'PREMIUM VEGAN SUPPLEMENTS - Vegan Dream';
+}
+
+
 
 /* landing page product grid  */
 .grid.product-grid {
@@ -181,11 +195,33 @@ h1.header__heading,
     background-color: white !important;
 }
 
-/* Product flvourdrop down list */
+/* Product flavourdrop down list */
 #product-list,
 .product-list {
     width: 100%;
     height: 4rem;
     color: black;
     background-color: white;
+}
+
+@media screen and (min-width: 990px) {
+
+    .page-width--narrow,
+    .collapsible-content-wrapper-narrow {
+        max-width: var(--page-width) !important;
+        padding: 0 5rem;
+    }
+
+    .contact h2 {
+        padding-top: 3rem;
+    }
+
+    .contact #ContactForm {
+        width: 50%;
+    }
+
+    .contact,
+    .collapsible-section-layout {
+        padding-top: 0 !important;
+    }
 }
