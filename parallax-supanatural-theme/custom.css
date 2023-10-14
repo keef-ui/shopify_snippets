@@ -78,34 +78,6 @@ html {
 
 
 
-/*This targets page headers  for About page, Muscle Magic page, Vegan Dream page*/
-#Banner-template--20209608163639__204aebdf-7542-4b77-bb53-025769a6894b::before,
-#Banner-template--20390203621687__204aebdf-7542-4b77-bb53-025769a6894b::before,
-#Banner-template--20390109217079__204aebdf-7542-4b77-bb53-025769a6894b::before {
-    width: 100%;
-    height: 3rem;
-    background: #a7cf38;
-    content: 'PREMIUM VEGAN SUPPLEMENTS';
-    /* top: 21px; */
-    z-index: 9;
-    position: absolute;
-    bottom: 0;
-
-    color: white !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-#Banner-template--20390203621687__204aebdf-7542-4b77-bb53-025769a6894b::before {
-
-    content: 'PREMIUM VEGAN SUPPLEMENTS - Muscle Magic';
-}
-
-#Banner-template--20390109217079__204aebdf-7542-4b77-bb53-025769a6894b::before {
-    content: 'PREMIUM VEGAN SUPPLEMENTS - Vegan Dream';
-}
 
 
 
@@ -204,24 +176,98 @@ h1.header__heading,
     background-color: white;
 }
 
+
+
+/* Magic muscle and Veagan drea more info page */
 @media screen and (min-width: 990px) {
-
-    .page-width--narrow,
-    .collapsible-content-wrapper-narrow {
-        max-width: var(--page-width) !important;
-        padding: 0 5rem;
+    .vegan-dream.page-width--narrow {
+        max-width: none !important;
+        padding: 0px;
     }
 
-    .contact h2 {
-        padding-top: 3rem;
-    }
+}
 
-    .contact #ContactForm {
-        width: 50%;
-    }
 
-    .contact,
-    .collapsible-section-layout {
-        padding-top: 0 !important;
-    }
+/*nutritional table pages*/
+
+.muscle-magic .rte,
+.vegan-dream .rte {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.vegan-dream>h2 {
+    background: #a7cf38;
+    color: white;
+    line-height: 3rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+
+/* Nutritional Table */
+
+.performance-facts__table {
+    font-size: 1rem;
+
+}
+
+@media only screen and (max-width: 375px) {
+
+    /* #Banner-template--16116916158637__204aebdf-7542-4b77-bb53-025769a6894b::before,
+  #Banner-template--16165276254381__e9bcf1f6-57a0-4dbb-abd7-88e50ec2786e::before,
+  #Banner-template--16170929488045__e9bcf1f6-57a0-4dbb-abd7-88e50ec2786e::before{
+      width: 100%;
+      height:3rem;
+      background: orange;
+ 
+  } */
+
+}
+
+
+/*  Banner heaidng strip for pages : vegan dream, magic muscle and about page*/
+
+
+
+#Banner-template--20390203621687__204aebdf-7542-4b77-bb53-025769a6894b .banner__content,
+#Banner-template--20390109217079__204aebdf-7542-4b77-bb53-025769a6894b .banner__content,
+#Banner-template--16116916158637__204aebdf-7542-4b77-bb53-025769a6894b .banner__content,
+#Banner-template--20209608163639__204aebdf-7542-4b77-bb53-025769a6894b .banner__content {
+    width: 100%;
+    height: 3rem;
+    background: #a7cf38;
+    padding: 0;
+    /* font-size: 0.1rem; */
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+
+}
+
+#Banner-template--20390203621687__204aebdf-7542-4b77-bb53-025769a6894b .banner__box,
+#Banner-template--20390109217079__204aebdf-7542-4b77-bb53-025769a6894b .banner__box,
+#Banner-template--16116916158637__204aebdf-7542-4b77-bb53-025769a6894b .banner__box,
+#Banner-template--20209608163639__204aebdf-7542-4b77-bb53-025769a6894b .banner__box {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+#Banner-template--20390203621687__204aebdf-7542-4b77-bb53-025769a6894b .banner__box h2,
+#Banner-template--20390109217079__204aebdf-7542-4b77-bb53-025769a6894b .banner__box h2,
+#Banner-template--16116916158637__204aebdf-7542-4b77-bb53-025769a6894b .banner__box h2,
+#Banner-template--20209608163639__204aebdf-7542-4b77-bb53-025769a6894b .banner__box h2 {
+    color: white;
+    background-color: transparent;
+    font-size: 1.6rem;
+    text-transform: none;
+}
+
+.vegan-dream h2 {
+    text-transform: none !important;
 }
