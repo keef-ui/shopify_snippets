@@ -1,0 +1,28 @@
+step 1- create meta data fields: Goto settings-> custom data ->products.
+
+click on add definition to create data field. You would need to create 7 items they are (Just file in the name field and then select the appropriate type, the rest will be auto filled):
+
+Name: nutritional_chart
+type: File
+
+Name: Certifications
+type: File
+
+Name: Warnings
+type: Multi-line text
+
+Name: description
+type: Rich text
+
+Name: Directions For Use
+type: Multi-line text
+
+Name: Ingredients
+type: Multi-line text
+
+Name: Flavour
+type: Single line text
+
+PLEASE NOTE the the name should be same case as above and check spelling for each. Also you need to make sure the type is 
+as stated above. The first 2 are type File, the others are either Multiline text,single line text or rich text. When click on "Select type" 
+you will be presented with a list. you need to navigate the list to find appropriate type.
