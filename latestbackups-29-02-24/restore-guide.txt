@@ -26,3 +26,51 @@ type: Single line text
 PLEASE NOTE the the name should be same case as above and check spelling for each. Also you need to make sure the type is 
 as stated above. The first 2 are type File, the others are either Multiline text,single line text or rich text. When click on "Select type" 
 you will be presented with a list. you need to navigate the list to find appropriate type.
+
+******* LOGO  ********
+in Theme customisation click Gear icon -> select icon and upload
+
+
+
+****** Colection images *******
+add following and link respective products:
+
+MUSCLE MAGIC STANDARD
+tag is equal to : Magic Muscle - Standard 
+
+VEGAN DREAM STANDARD
+tag is equal to : Vegan Dream - Standard
+
+VEGAN DREAM ALLERGEN FREE 
+tag is equal to : Allergen free (Vegan Dream)
+
+
+***** Check that all products are linked to the template named "Product.product"
+You can bulk edit and change this
+
+Choose product.productnoflavour for shilajit
+
+
+The product accordian data and the flavour are metadata. Follow the instructions below to restore:
+
+****** ADD Flavour back to products   *****
+do mulk edit for all products and select columns and tick flavour. This will show flavour collumn, now you can add the flavour. Hint: copy the flavour and weight from the title ie Banana 2.1kg
+
+****** ADD Description back to products   *****
+do same as above. Get description from writeup
+
+
+****** ADD Ingredients back to products   *****
+do same as above. Get incerdients from from writeup
+
+****** ADD Nutrinial chart, and warnings also (These are the fields that show up in the accordian   *****
+
+
+
+
+**********  Footer **********
+ 
+Privacy policy
+Terms of service
+Contact information
+
